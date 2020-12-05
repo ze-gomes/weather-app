@@ -1,46 +1,41 @@
+html,
+body {
+	margin: 0;
+	height: 100%;
+}
+
+body {
+	background: linear-gradient(-45deg, #1c92d2, #f2fcfe);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 header {
 	position: sticky;
 	top: 0;
-	text-align: center;
+}
+input:hover {
+	box-shadow: 5px black;
 }
 
-.container {
-	margin: 0 auto;
-	max-width: 1200px;
-}
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-.row {
-	float: left;
-	width: 100%;
-	padding: 20px 0 50px;
+body {
+	font: 14px 'Lato', Arial, sans-serif;
+	min-width: 100%;
+    min-height: 100%;
 }
 
-h2 {
-	text-align: center;
-	color: #2079df;
-	font-size: 28px;
-	float: left;
-	width: 100%;
-	margin: 30px 0;
-	position: relative;
-	line-height: 58px;
-	font-weight: 400;
-}
-
-h2:before {
-	content: '';
-	position: absolute;
-	left: 50%;
-	bottom: 0;
-	width: 100px;
-	height: 2px;
-	background-color: #2079df;
-	margin-left: -50px;
-}
 
 :focus {
 	outline: none;
@@ -55,47 +50,81 @@ h2:before {
 
 input[type='text'] {
 	font: 15px/24px 'Lato', Arial, sans-serif;
-	color: #333;
+	color: #ffffff;
 	width: 100%;
 	box-sizing: border-box;
 	letter-spacing: 1px;
 }
 
-.input-effect {
-	border: 0;
-	padding: 4px 0;
-	border-bottom: 1px solid #ccc;
-	background-color: transparent;
+.effect-20 {
+	border: 1px solid #ffffff;
+	padding: 7px 14px;
+	transition: 0.4s;
+	background: transparent;
 }
 
-.input-effect ~ .focus-border {
+.effect-20 ~ .focus-border:before,
+.effect-20 ~ .focus-border:after {
+	content: '';
 	position: absolute;
-	bottom: 0;
-	left: 50%;
+	top: 0;
+	left: 0;
 	width: 0;
 	height: 2px;
 	background-color: #3399ff;
-	transition: 0.4s;
+	transition: 0.3s;
 }
-.input-effect :focus ~ .focus-border,
-.has-content.input-effect ~ .focus-border {
-	width: 100%;
-	transition: 0.4s;
-	left: 0;
+.effect-20 ~ .focus-border:after {
+	top: auto;
+	bottom: 0;
+	left: auto;
+	right: 0;
 }
-.input-effect ~ label {
+.effect-20 ~ .focus-border i:before,
+.effect-20 ~ .focus-border i:after {
+	content: '';
 	position: absolute;
+	top: 0;
 	left: 0;
+	width: 2px;
+	height: 0;
+	background-color: #3399ff;
+	transition: 0.4s;
+}
+.effect-20 ~ .focus-border i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+.effect-20:focus ~ .focus-border:before,
+.effect-20:focus ~ .focus-border:after,
+.has-content.effect-20 ~ .focus-border:before,
+.has-content.effect-20 ~ .focus-border:after {
 	width: 100%;
-	top: 9px;
-	color: #aaa;
+	transition: 0.3s;
+}
+.effect-20:focus ~ .focus-border i:before,
+.effect-20:focus ~ .focus-border i:after,
+.has-content.effect-20 ~ .focus-border i:before,
+.has-content.effect-20 ~ .focus-border i:after {
+	height: 100%;
+	transition: 0.4s;
+}
+.effect-20 ~ label {
+	position: absolute;
+	left: 14px;
+	width: 100%;
+	top: 10px;
+	color: #ffffff;
 	transition: 0.3s;
 	z-index: -1;
 	letter-spacing: 0.5px;
 }
-.input-effect:focus ~ label,
-.has-content.input-effect ~ label {
-	top: -16px;
+.effect-20:focus ~ label,
+.has-content.effect-20 ~ label {
+	top: -18px;
+	left: 0;
 	font-size: 12px;
 	color: #3399ff;
 	transition: 0.3s;
