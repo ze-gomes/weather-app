@@ -8,21 +8,49 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/weather-icons.min.css">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUDfbWorxStKcv1pya3PKb8Nl0L-BvemE">
+    </script>
 </head>
 
 <body>
-    <div class="col-3 input-effect">
-        <input id="loc-input" class="effect-20" type="text" placeholder="">
-        <label id="loc-label">Location</label>
-        <span class="focus-border">
-            <i></i>
-        </span>
-    </div>
-    <main>
+    <div class="container">
+        <div class="col-3 input-effect">
+            <input id="loc-input" class="effect-20" type="text" placeholder="">
+            <label id="loc-label">Location</label>
+            <span class="focus-border">
+                <i></i>
+            </span>
+        </div>
 
-    </main>
-    <script src="main.js" async defer></script>
+        <div class="card">
+            <div id="weather-display">
+                <div id="card-header">
+                    <h1 id="city-name"></h1>
+                </div>
+                <div> <i id="weather-icon" class="loading-weather wi wi-day-sunny"></i>
+                    <p id="weather-description"></p>
+                </div>
+                <div id="weather-temps">
+                    <p id="weather-temp"></p>
+                </div>
+                <div id="map" class="card"></div>
+            </div>
+            <div id="loading-display">
+                <i class="loading-weather wi wi-day-sunny"></i>
+                <h2 id="unknown-city-name"></h2>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="footer-text">
+            Made by <a href="https://zegomes.net">José Gomes</a> <a href="https://github.com/Kaneco"><img
+                    src="images/github-white.svg"></img></a>
+        </p>
+    </div>
+    <script type="module" src="main.js" async defer></script>
 </body>
 
 </html>
