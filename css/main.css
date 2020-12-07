@@ -43,10 +43,13 @@ body {
 }
 
 #map {
-	height: 150px;
-	width: 280px;
+	height: 100%;
+	width: 100%;
 	border-radius: 8px;
-	box-shadow: 0 12px 32px 4px rgba(black, 1);
+	box-shadow: 0px 0px 29px -18px rgba(0, 0, 0, 0.5);
+	grid-area: map;
+	align-self: center;
+	border: 1px solid rgba(0, 0, 0, 0.384);
 }
 
 :focus {
@@ -131,6 +134,8 @@ input[type='text'] {
 	transition: 0.1s;
 	z-index: -1;
 	letter-spacing: 0.5px;
+	font-variant-caps: all-small-caps;
+	font-weight: 600;
 }
 .effect-20:focus ~ label,
 .has-content.effect-20 ~ label {
@@ -142,18 +147,13 @@ input[type='text'] {
 }
 
 .card {
-	grid-area: weather;
 	place-self: center;
 	width: 300px;
-	height: 500px;
+	height: 400px;
 	padding: 0.5rem 1rem;
 	background-color: #ffffff;
 	border-radius: 8px;
-	box-shadow: 0 12px 32px 4px rgba(black, 0.8);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
+	box-shadow: 0px 0px 29px -18px rgba(0, 0, 0, 0.5);
 	transition: 0.2s;
 }
 .card:hover {
@@ -170,10 +170,14 @@ h1 {
 
 h2 {
 	font: 18px 'Lato', Arial, sans-serif;
-	font-weight: 600;
-	font-variant-caps: all-petite-caps;
+	font-weight: 500;
 	box-shadow: 0 12px 32px 4px rgba(black, 0.2);
 	text-align: center;
+}
+
+.container p {
+	font: 14px 'Lato', Arial, sans-serif;
+	font-variant-caps: all-small-caps;
 }
 
 .loading-weather {
@@ -188,18 +192,39 @@ h2 {
 		0 0 30px #ffdf1a, 0 0 40px #ffdf1a, 0 0 55px #fda500, 0 0 75px #ffdf1a;
 }
 
-#weather-temps {
-	font-size: 60px;
+#weather-temp {
+	font-size: 45px;
 	font-weight: 600;
+	margin: 0;
+}
+
+#weather-description {
+	margin: 15px 0 0 0;
 }
 
 #weather-display {
+	width: 100%;
+	height: 100%;
 	display: none;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 10% 40% auto;
+	justify-items: center;
+	align-items: center;
+	gap: 10px 10px;
+	transform: translateX(-5px);
+	grid-template-areas:
+		'location location'
+		'temp icon'
+		'map map';
 }
 
 #loading-display {
-	margin: auto;
-	text-align: center;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 @keyframes rotate {
@@ -211,7 +236,45 @@ h2 {
 #card-header {
 	width: 100%;
 	border-radius: 8px;
-	background-color: #ff63474b;
+	grid-area: location;
+	text-align: center;
+}
+
+#local-time {
+	font-size: 10px;
+	margin-top: -15px;
+}
+
+.weather-info {
+	height: 100%;
+	grid-area: temp;
+	border-radius: 8px;
+	justify-self: stretch;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 0px 0px 29px -18px rgba(0, 0, 0, 0.5);
+}
+
+#weather-max,
+#weather-min {
+	margin: 5px 0 0 0;
+}
+
+.weather-icon {
+	display: flex;
+	background-color: #6ee7ff;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	grid-area: icon;
+	text-align: center;
+	height: 100%;
+	justify-self: stretch;
+	font-variant: small-caps;
+	box-shadow: 0px 0px 29px -18px rgba(0, 0, 0, 0.5);
+	border-radius: 8px;
 }
 
 /* Footer Formatting */
@@ -224,7 +287,7 @@ h2 {
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.5);
 	text-align: center;
 }
 
@@ -246,7 +309,7 @@ h2 {
 	background-size: 4px 2px;
 	color: rgb(255, 255, 255);
 	text-decoration: none;
-	transition: all 0.5s;
+	transition: background-size 0.4s;
 }
 
 .footer-text a:hover {
@@ -259,12 +322,12 @@ h2 {
 	color: white;
 	border-bottom: 0;
 	background: none;
-	vertical-align: middle;
 }
 
 .footer-text img {
-	max-width: 17px;
+	max-width: 18px;
 	transition: all 0.5s;
+	vertical-align: middle;
 }
 
 .footer-text img:hover {

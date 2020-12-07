@@ -10,8 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/weather-icons.min.css">
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUDfbWorxStKcv1pya3PKb8Nl0L-BvemE">
-    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2vFjs8zMcUlxk1y2GW1yqqqwiD7_Jcyg"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
@@ -26,27 +27,31 @@
 
         <div class="card">
             <div id="weather-display">
-                <div id="card-header">
+                <div class="animate__animated animate__slideInDown" id="card-header">
                     <h1 id="city-name"></h1>
+                    <p id="local-time"></p>
+
                 </div>
-                <div> <i id="weather-icon" class="loading-weather wi wi-day-sunny"></i>
+                <div class="weather-info animate__animated animate__slideInLeft">
+                    <p id="weather-temp"></p>
+                    <p id="weather-max"></p>
+                    <p id="weather-min"></p>
+                </div>
+                <div class="weather-icon animate__animated animate__slideInRight">
+                    <i id="weather-icon" class="wi wi-day-sunny"></i>
                     <p id="weather-description"></p>
                 </div>
-                <div id="weather-temps">
-                    <p id="weather-temp"></p>
-                </div>
-                <div id="map" class="card"></div>
+                <div id="map" class="animate__animated animate__slideInUp"></div>
             </div>
             <div id="loading-display">
                 <i class="loading-weather wi wi-day-sunny"></i>
                 <h2 id="unknown-city-name"></h2>
-
             </div>
         </div>
     </div>
     <div class="footer">
         <p class="footer-text">
-            Made by <a href="https://zegomes.net">José Gomes</a> <a href="https://github.com/Kaneco"><img
+            Made by <a href="https://zegomes.net">José Gomes</a> <a href="https://github.com/ze-gomes"><img
                     src="images/github-white.svg"></img></a>
         </p>
     </div>
