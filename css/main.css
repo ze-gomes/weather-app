@@ -37,7 +37,7 @@ input:hover {
 }
 
 body {
-	font: 14px 'Lato', Arial, sans-serif;
+	font: 14px 'Lato', sans-serif;
 	min-width: 100%;
 	min-height: 100%;
 }
@@ -63,7 +63,7 @@ body {
 } /* necessary to give position: relative to parent. */
 
 input[type='text'] {
-	font: 15px/24px 'Lato', Arial, sans-serif;
+	font: 15px/24px 'Lato', sans-serif;
 	color: #ffffff;
 	width: 100%;
 	box-sizing: border-box;
@@ -161,7 +161,7 @@ input[type='text'] {
 }
 
 h1 {
-	font: 24px 'Lato', Arial, sans-serif;
+	font: 24px 'Lato', sans-serif;
 	font-weight: 600;
 	font-variant-caps: all-small-caps;
 	box-shadow: 0 12px 32px 4px rgba(black, 0.2);
@@ -169,14 +169,14 @@ h1 {
 }
 
 h2 {
-	font: 18px 'Lato', Arial, sans-serif;
+	font: 18px 'Lato', sans-serif;
 	font-weight: 500;
 	box-shadow: 0 12px 32px 4px rgba(black, 0.2);
 	text-align: center;
 }
 
 .container p {
-	font: 14px 'Lato', Arial, sans-serif;
+	font: 14px 'Lato', sans-serif;
 	font-variant-caps: all-small-caps;
 }
 
@@ -193,7 +193,7 @@ h2 {
 }
 
 #weather-temp {
-	font-size: 45px;
+	font-size: 40px;
 	font-weight: 600;
 	margin: 0;
 }
