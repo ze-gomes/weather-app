@@ -16,4 +16,4 @@ Here is the live demo: https://ze-gomes.github.io/weather-app/
 [The Odin Project Curriculum](https://www.theodinproject.com/lessons/weather-app)
 
 ## License
-This project is licensed under the terms of the **[MIT](blob/main/LICENSE)**  license. 
+This project is licensed under the terms of the **[MIT](/LICENSE)**  license. 
