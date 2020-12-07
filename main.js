@@ -58,11 +58,11 @@ async function getWeather(cityname) {
 		// Parse API weather data and write to page
 		cityName.innerText = weatherData.name;
 		localTime.innerText = localDate.toLocaleTimeString();
-		weatherTemp.innerText = Math.round(weatherData.main.temp) + '' + '℃';
+		weatherTemp.innerText = Math.round(weatherData.main.temp) + '' + 'ºC';
 		document.getElementById('weather-max').innerText =
-			'MAX: ' + Math.round(weatherData.main.temp_max) + '℃';
+			'MAX: ' + Math.round(weatherData.main.temp_max) + 'ºC';
 		document.getElementById('weather-min').innerText =
-			'MIN: ' + Math.round(weatherData.main.temp_min) + '℃';
+			'MIN: ' + Math.round(weatherData.main.temp_min) + 'ºC';
 		weatherDescription.innerText = weatherData.weather[0].description;
 		setTemperatureGradient(weatherData.main.temp);
 		getMap(weatherData.coord.lat, weatherData.coord.lon);
